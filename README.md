@@ -266,7 +266,7 @@ L'interpretazione operativa è che le anomalie siano coerenti con un possibile p
 
 ## Scelte progettuali
 
-Ho scelto RAG invece del fine tuning perché i dati e i risultati possono essere aggiornati senza riaddestrare il modello.
+È stato scelto il RAG invece del fine tuning perché i dati e i risultati possono essere aggiornati senza riaddestrare il modello.
 
 Il RAG mantiene la knowledge base in locale, riducendo il rischio di esporre dati interni.
 
