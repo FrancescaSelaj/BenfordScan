@@ -1,0 +1,137 @@
+ANALISI BENFORD'S LAW - RISULTATI INTERNI RISERVATI
+
+Dataset: Credit Card Fraud Detection.
+Totale transazioni analizzate: 284,807.
+
+RIEPILOGO OPERATIVO
+
+Il tasso di frode nel dataset è 0.163%.
+
+L'anomalia principale nella prima cifra è la cifra 1, con scarto frode +14.4 punti percentuali.
+
+L'anomalia più forte nella seconda cifra è la cifra 0, con scarto frode +21.4 punti percentuali.
+
+Il prefisso più anomalo nelle prime due cifre è 10, con scarto frode +23.5 punti percentuali.
+
+La soglia aziendale critica, cioè quella con segnale di attenzione, è la soglia di 100 euro, con tasso di frode 1.05%.
+
+Il pattern complessivo è coerente con card testing fraud: micro-transazioni, importi tondi e prefisso 10 sovrarappresentato.
+
+ANALISI DESCRITTIVA
+
+Il dataset contiene 282,517 transazioni legittime e 465 transazioni fraudolente.
+
+Il tasso di frode nel dataset è pari a 0.163%.
+
+L'importo medio delle transazioni legittime è 88.85 euro, mentre l'importo mediano delle transazioni legittime è 22.49 euro.
+
+L'importo medio delle transazioni fraudolente è 129.31 euro, mentre l'importo mediano delle transazioni fraudolente è 17.06 euro.
+
+L'importo massimo fraudolento è 2125.87 euro.
+
+Il dataset copre 6.4 ordini di grandezza. Il requisito per applicare la legge di Benford è soddisfatto, perché la distribuzione copre più ordini di grandezza.
+
+
+RISULTATI PRIMA CIFRA
+
+Nell'analisi della prima cifra, la cifra 1 presenta un'anomalia rilevante. Il valore atteso secondo Benford è 30.1%, mentre nelle transazioni fraudolente la cifra 1 compare nel 44.5% dei casi. Lo scarto frode è +14.4 punti percentuali.
+
+La cifra 2 presenta una seconda anomalia rilevante. Il valore atteso secondo Benford è 17.6%, mentre nelle transazioni fraudolente compare nell'8.6% dei casi. Lo scarto frode è -9.0 punti percentuali.
+
+Le cifre 7 e 9 mostrano anomalie moderate. La cifra 7 ha uno scarto frode di circa +5.0 punti percentuali, mentre la cifra 9 ha uno scarto frode di circa +4.5 punti percentuali.
+
+
+RISULTATI SECONDA CIFRA
+
+L'anomalia principale nella seconda cifra è la cifra 0, con scarto frode +21.4 punti percentuali.
+
+Nell'analisi della seconda cifra, l'anomalia più forte riguarda la cifra 0.
+
+La cifra 0 ha un valore atteso secondo Benford pari al 12.0%, mentre nelle transazioni fraudolente compare nel 33.3% dei casi.
+
+Lo scarto frode della seconda cifra 0 è pari a +21.4 punti percentuali.
+
+Questa è la deviazione più forte nell'analisi della seconda cifra e indica una concentrazione anomala su importi tondi, come 1.00 euro, 10.00 euro e 100.00 euro.
+
+La cifra 3 presenta una deviazione moderata negativa. Il valore atteso secondo Benford è 10.4%, mentre nelle transazioni fraudolente compare nel 4.8% dei casi. Lo scarto frode è -5.6 punti percentuali.
+
+La cifra 9 nelle transazioni legittime mostra uno scarto positivo rilevante: Benford atteso 8.5%, legittime 19.0%, scarto legittimo +10.5 punti percentuali. Questo può essere spiegato da prezzi psicologici nel retail, come 9.99 euro.
+
+
+RISULTATI PRIME DUE CIFRE
+
+Nell'analisi delle prime due cifre, il prefisso più anomalo è 10.
+
+Il prefisso 10 ha un valore atteso secondo Benford pari al 4.1%, mentre nelle transazioni fraudolente compare nel 27.7% dei casi.
+
+Lo scarto frode del prefisso 10 è pari a +23.5 punti percentuali.
+
+Il prefisso 10 rappresenta quindi l'anomalia più elevata nell'analisi delle prime due cifre.
+
+Il prefisso 99 ha un valore atteso secondo Benford pari allo 0.4%, mentre nelle transazioni fraudolente compare nel 6.8% dei casi. Lo scarto frode è +6.3 punti percentuali.
+
+Il prefisso 76 ha uno scarto frode di +3.8 punti percentuali.
+
+Il prefisso 77 ha uno scarto frode di +2.1 punti percentuali.
+
+
+ANALISI SOGLIE AZIENDALI
+
+La soglia aziendale che mostra un segnale di attenzione è la soglia di 100 euro.
+
+Nel range 95.0-100.0 euro sono presenti 2928 transazioni legittime e 31 transazioni fraudolente.
+
+Il tasso di frode vicino alla soglia di 100 euro è pari a 1.05%.
+
+La soglia di 10 euro mostra 6997 transazioni legittime e 2 fraudolente, con tasso frode 0.03%. Il segnale è normale.
+
+La soglia di 50 euro mostra 3783 transazioni legittime e 0 fraudolente, con tasso frode 0.00%. Il segnale è normale.
+
+La soglia di 500 euro mostra 611 transazioni legittime e 2 fraudolente, con tasso frode 0.33%. Il segnale è normale.
+
+La soglia di 1000 euro mostra 286 transazioni legittime e 1 fraudolenta, con tasso frode 0.35%. Il segnale è normale.
+
+La soglia di 2000 euro mostra 93 transazioni legittime e 0 fraudolente, con tasso frode 0.00%. Il segnale è normale.
+
+
+INTERPRETAZIONE OPERATIVA
+
+Le anomalie principali convergono verso un possibile pattern di card testing fraud.
+
+La sovrarappresentazione della prima cifra 1 indica che molte frodi si concentrano su importi che iniziano con 1, come 1 euro, 10 euro o 19 euro.
+
+La sovrarappresentazione della seconda cifra 0 indica una forte concentrazione su importi tondi, come 1.00 euro, 10.00 euro e 100.00 euro.
+
+La sovrarappresentazione del prefisso 10 conferma la presenza di importi piccoli e arrotondati, compatibili con micro-transazioni di test.
+
+Il prefisso 99 può indicare importi psicologici, come 0.99 euro, 9.99 euro o 99 euro. Tuttavia va interpretato con cautela, perché anche le transazioni legittime nel retail possono usare prezzi psicologici.
+
+La soglia di 100 euro può suggerire un comportamento sequenziale: prima micro-transazioni di test e poi tentativi vicino a una soglia più elevata.
+
+CONSIDERAZIONI OPERATIVE
+
+BenfordScan è uno strumento di supporto al monitoraggio antifrode, non un sistema di decisione automatica.
+
+I segnali individuati devono essere usati come indicatori di priorità per alert, controlli aggiuntivi o revisioni operative. Non devono essere usati come regole rigide di blocco automatico.
+
+L'analisi si concentra sulla colonna Amount perché rappresenta il valore monetario reale delle transazioni. Le colonne V1-V28 non sono state analizzate con Benford's Law perché sono componenti PCA anonimizzate e non interpretabili come valori economici.
+
+La knowledge base interna deve essere aggiornata dopo ogni nuova analisi per mantenere coerenza tra i risultati e le risposte del sistema.
+
+PATTERN CARD TESTING FRAUD
+
+Il pattern complessivo emerso dall'analisi è compatibile con il card testing fraud. In questo tipo di frode una carta rubata viene testata con importi piccoli e tondi per verificare se la carta funziona prima di tentare operazioni di importo maggiore.
+
+Gli indicatori principali del pattern sono: importi che iniziano con 1, seconda cifra 0 che indica importi tondi, prefisso 10 fortemente sovrarappresentato e concentrazione vicino alla soglia di 100 euro.
+
+Questi quattro indicatori convergono verso lo stesso comportamento e si rafforzano a vicenda.
+
+NOTA METODOLOGICA
+
+Il test Chi-square non è stato applicato perché il campione supera 100.000 osservazioni. Su campioni molto grandi, il test tende a rigettare l'ipotesi nulla anche per scarti trascurabili.
+
+Le anomalie individuate non dimostrano automaticamente una frode.
+
+Le anomalie devono essere interpretate come segnali di rischio e richiedono giudizio professionale.
+
+Il riferimento metodologico è Nigrini M. 1994 e 2020, Forensic Analytics.

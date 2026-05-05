@@ -1,0 +1,6 @@
+#requirements.txt
+pandas
+numpy
+openpyxl
+ollama
+ddgs
