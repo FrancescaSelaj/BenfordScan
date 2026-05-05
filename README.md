@@ -1,4 +1,3 @@
-# README.md 
 # Fraud Detection con Benford's Law, RAG e Agent Orchestration
 
 ## Obiettivo del progetto
@@ -26,9 +25,13 @@ L'obiettivo è mostrare come un'analisi di fraud detection possa essere integrat
 
 ## Dataset
 
-Il progetto usa il dataset Credit Card Fraud Detection disponibile su Kaggle.
+Il progetto usa il dataset Credit Card Fraud Detection disponibile su Kaggle:
 
-Per eseguire il progetto, il file `creditcard.csv` deve essere presente nella cartella principale del progetto.
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+Per eseguire il progetto da zero, il file `creditcard.csv` deve essere scaricato da Kaggle e inserito nella cartella principale del progetto.
+
+Il file `creditcard.csv` non è incluso nel repository perché supera il limite di dimensione consentito da GitHub.
 
 Nel codice viene usata la colonna `Amount`, perché contiene gli importi reali delle transazioni.
 
@@ -53,22 +56,22 @@ Entrambi vengono eseguiti localmente tramite Ollama.
 ## Struttura del progetto
 
 ```text
-Laboratorio data science/
+BenfordScan/
 │
 ├── data/
 │   └── risultati_benford.txt
 │
-├── embeddings/
-│   └── risultati_benford.json
-│
-├── analisi_benford.py
-├── rag_interno.py
+├── agente_benford_opzionale.py
 ├── agente_web.py
-├── orchestratore.py
+├── analisi_benford.py
 ├── main.py
-├── agente_benford.py
+├── orchestratore.py
+├── rag_interno.py
+│
 ├── analisi_benford_output.xlsx
+├── Report BenfordScan.pdf
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
@@ -127,9 +130,13 @@ La scelta di usare modelli locali leggeri rende il progetto eseguibile anche su 
 2. `python main.py` — avvia la demo interattiva
 3. `python agente_benford_opzionale.py` — opzionale, genera report testuale
 
+---
+
 ## Nota sugli embedding
 
 Il file `embeddings/risultati_benford.json` contiene gli embedding della knowledge base `data/risultati_benford.txt`.
+
+Questo file non è incluso nel repository perché viene generato automaticamente alla prima esecuzione di `python main.py`.
 
 Non è necessario eliminarlo a ogni esecuzione. Deve essere cancellato solo se viene modificato il file `risultati_benford.txt`, se cambia il modello di embedding oppure se viene modificata la logica di chunking.
 
