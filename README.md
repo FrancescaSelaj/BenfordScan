@@ -14,14 +14,6 @@ L'obiettivo è mostrare come un'analisi di fraud detection possa essere integrat
 
 ---
 
-## Capitoli del corso coperti
-
-- Ch. 2: uso locale di LLM open-source tramite Ollama.
-- Ch. 3: RAG, embedding, chunking, retrieval e cosine similarity.
-- Ch. 4: agenti, orchestrazione e separazione tra dati interni ed esterni.
-- Ch. 5: Fraud Detection e Benford's Law.
-
----
 
 ## Dataset
 
